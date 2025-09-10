@@ -5,6 +5,7 @@ In [.NET MAUI](https://www.syncfusion.com/maui-controls), integrating the [SfRan
 This implementation creates a seamless data filtering experience where users can drag the range selector thumbs to dynamically filter chart data. 
 
 **Output** 
+![rangeselector](https://github.com/user-attachments/assets/0e2ccd17-18f3-4492-8cfe-ec994329b7f6)
 
 ## Troubleshooting
 
