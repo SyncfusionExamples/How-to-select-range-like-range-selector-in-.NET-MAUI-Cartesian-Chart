@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sliders="clr-namespace:Syncfusion.Maui.Sliders;assembly=Syncfusion.Maui.Sliders"
+             xmlns:charts="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             x:Class="RangeSelectorChart.MainPage">
+
+    <Grid VerticalOptions="Fill"> 
+
+
+        <sliders:SfRangeSelector Grid.Row="1"
+                        Grid.Column="1"
+                        Minimum="1"
+                        Maximum="30"
+                        RangeStart="{Binding RangeStart}"
+                        RangeEnd="{Binding RangeEnd}"
+                        ShowTicks="True"
+                        ActiveRegionFill="Transparent"
+                        InactiveRegionFill="Transparent"
+                        ShowLabels="True"
+                        DragBehavior="Both" 
+                        Interval="2"  
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill">
+            <sliders:SfRangeSelector.TrackStyle>
+                <sliders:SliderTrackStyle ActiveFill="#614570"
+                                InactiveFill="#D6ABED" />
+            </sliders:SfRangeSelector.TrackStyle>
+            <sliders:SfRangeSelector.ThumbStyle>
+                <sliders:SliderThumbStyle Fill="White"
+                                StrokeThickness="2"
+                                Stroke="#614570" />
+            </sliders:SfRangeSelector.ThumbStyle>
+            <sliders:SfRangeSelector.ThumbOverlayStyle>
+                <sliders:SliderThumbOverlayStyle Fill="#4D614570" />
+            </sliders:SfRangeSelector.ThumbOverlayStyle> 
+
+            <charts:SfCartesianChart HeightRequest="720" Margin="0,0,0,10"
+                           x:Name="charts">
+                <charts:SfCartesianChart.XAxes>
+                    <charts:NumericalAxis Minimum="1"
+                                Maximum="30"
+                                Interval="2"
+                                ShowMajorGridLines="False"
+                                ShowMinorGridLines="False"
+                                IsVisible="False">
+                    </charts:NumericalAxis>
+                </charts:SfCartesianChart.XAxes>
+                <charts:SfCartesianChart.YAxes>
+                    <charts:NumericalAxis ShowMajorGridLines="False"
+                                ShowMinorGridLines="False" Maximum="30"
+                                IsVisible="False">
+                    </charts:NumericalAxis>
+                </charts:SfCartesianChart.YAxes>
+                <charts:SfCartesianChart.Series>
+                    <charts:ColumnSeries ItemsSource="{Binding Items}"
+                               XBindingPath="Day"
+                               YBindingPath="Value"
+                               PaletteBrushes="{Binding Brushes}"
+                               StrokeWidth="0" />
+                </charts:SfCartesianChart.Series>
+            </charts:SfCartesianChart>
+        </sliders:SfRangeSelector>
+    </Grid>
+
+</ContentPage>
